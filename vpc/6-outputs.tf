@@ -13,3 +13,7 @@ output "public_subnet_ids" {
 output "public_ip" {
   value = aws_eip.this.public_ip
 }
+
+output "eip_id" {
+  value = aws_eip.this.id
+}

@@ -20,3 +20,7 @@ variable "instance_type" {
   default     = "t2.micro"
 }
 
+variable "var.aws_eip_id" {
+  description = "ID of elastic IP."
+  type        = string
+}

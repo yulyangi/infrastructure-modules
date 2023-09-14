@@ -10,3 +10,8 @@ resource "aws_instance" "this" {
     "Name" = "Ubuntu"
   }
 }
+
+resource "aws_eip_association" "this" {
+  instance_id   = aws_instance.this.id
+  allocation_id = var.aws_eip_id
+}
