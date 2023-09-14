@@ -18,12 +18,12 @@ sudo sed -i '6s/.*/@        IN        SOA        ns1.binbash.site. root.localhos
 sudo sed -i '13s/.*/@        IN        NS        ns1.binbash.site./' /etc/bind/db.binbash.site
 sudo tee -a /etc/bind/db.binbash.site <<EOF 
 @        IN        NS        ns2.binbash.site.
-ns1      IN        A         54.158.23.174
-ns2      IN        A         54.158.23.174
+ns1      IN        A         52.201.198.195
+ns2      IN        A         52.201.198.195
 mail     IN        MX 10     mail.binbash.site.
-binbash.site.      IN        A        54.158.23.174
-www      IN        A         54.158.23.174
-mail     IN        A         54.158.23.174
+binbash.site.      IN        A        52.201.198.195
+www      IN        A         52.201.198.195
+mail     IN        A         52.201.198.195
 public-dns         IN        A         8.8.8.8
 EOF
 
@@ -33,5 +33,3 @@ systemctl reload-or-restart bind9
 # configuring ssl
 sudo apt -y install certbot python3-certbot-apache 
 sudo certbot -d binbash.site
-expect "Your name: "
-send -- "expect\n"
